@@ -1,0 +1,36 @@
+.header {
+  height: 72px;
+  border-bottom: 1px solid rgba(66, 66, 67, 0.2);
+  .header-wrapper {
+    padding-right: 32px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .logo-wrapper {
+        width: 128px;
+        position: relative;
+        img {
+          width: 100%;
+        }
+      }
+      .hamburger-menu {
+        width: 24px;
+        span {
+          display: block;
+          background-color: $black;
+          height: 2px;
+          width: 100%;
+          margin-bottom: 5px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
