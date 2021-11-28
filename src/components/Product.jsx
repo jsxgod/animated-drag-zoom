@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/features/cart/cartSlice";
 
 import ProductImage from "../assets/products/board-back-final.png";
 
@@ -17,8 +19,12 @@ import {
 } from "framer-motion";
 
 import { scroller as scroll } from "react-scroll";
+import { animateScroll } from "react-scroll";
 
-const Product = () => {
+const Product = ({ productData }) => {
+  // REDUX
+  const dispatch = useDispatch();
+
   const ease = [0.6, 0.05, -0.01, 0.99];
   const enlargedBreakpoint = -200;
   const leftDragConstraint = -1700;
@@ -88,36 +94,47 @@ const Product = () => {
     }
   };
 
+  const handleAddToCart = () => {
+    dispatch(addToCart(productData));
+  };
+
   return (
     <div className="product">
       <div className="product-info">
         <div className="product-info-wrapper">
           <div className="product-info-content">
             <h4>Skate Everywhere</h4>
-            <h1>Toy Machine</h1>
-            <h2>Cat Monster Complete</h2>
-            <p>
-              Take a ride and start rollin right with the Toy Machine Cat
-              Monster Complete 8.25 x 31.88. This is a high quality complete
-              that's perfect for beginning skateboarders, smaller riders, or
-              yougnsters looking to start skateboarding. Features a top quality
-              Toy Machine 7-ply maple deck, Rukus trucks, Toy Machine 52mm
-              wheels and shielded Toy Machine abec 5 bearings. Fully assembled
-              and ready to ride right out of the box.
-            </p>
+            <h1>{productData.brand}</h1>
+            <h2>{productData.name}</h2>
+            <p>{productData.description}</p>
             <div className="buttons-container">
-              <button>Buy Now ($99)</button>
-              <DownArrow />
+              <button onClick={handleAddToCart}>
+                Buy Now ${productData.price}
+              </button>
+              <DownArrow
+                onClick={() =>
+                  animateScroll.scrollToBottom({
+                    smooth: "easeInOutQuad",
+                    duration: 1000,
+                  })
+                }
+              />
             </div>
           </div>
         </div>
       </div>
       <Gallery style={{ translateY: moveUp }} />
       <div className="product-wrapper">
-        <motion.div
-          style={{ opacity: fadeIn }}
-          className="background"
-        ></motion.div>
+        <AnimatePresence>
+          {fullyEnlarged && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 0.3 } }}
+              exit={{ opacity: 0, transition: { duration: 0.2 } }}
+              className="background"
+            ></motion.div>
+          )}
+        </AnimatePresence>
         <AnimatePresence>
           {fullyEnlarged && (
             <motion.div
