@@ -1,16 +1,23 @@
 import React from "react";
-import { Header, LinkHistory, Product, Details } from "./components";
+import { Header } from "./components";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { CartPage, HomePage, ProductPage, ProductsPage } from "./pages";
 
 import "./sass/main.scss";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <LinkHistory />
-      <Product />
-      <Details />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:id" element={<ProductPage />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
