@@ -1,5 +1,9 @@
-export {default as Header } from "./Header";
-export {default as LinkHistory } from "./LinkHistory";
-export {default as Gallery } from "./Gallery";
-export {default as Product } from "./Product";
-export {default as Details } from "./Details";
+export { default as Header } from "./Header";
+export { default as LinkHistory } from "./LinkHistory";
+export { default as Gallery } from "./Gallery";
+export { default as Product } from "./Product";
+export { default as Details } from "./Details";
+export { default as Cart } from "./Cart";
+export { default as Menu } from "./Menu";
+export { default as ProductList } from "./ProductList";
+export { default as FilterSidebar } from "./FilterSidebar";
