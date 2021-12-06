@@ -1,32 +1,37 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import { fetchProducts } from "../redux/features/products/productsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 const ProductList = () => {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.products.products);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
+  const handleNavigate = (route) => {
+    navigate(route);
+  };
   return (
     <div className="product-list">
-      <div className="product-list-item-wrapper">
-        <div className="product-list-item-image-wrapper">IMG</div>
-        <div className="product-list-item-description-wrapper">
-          <div className="brand-wrapper">Toy Machine</div>
-          <div className="name-wrapper">Cat Monster Complete</div>
-          <div className="price-wrapper">$99</div>
+      {products?.map((product) => (
+        <div className="product-list-item-wrapper">
+          <div className="product-list-item-image-wrapper">
+            <img
+              src={product.images.main}
+              alt={"main"}
+              onClick={() => handleNavigate(`/products/${product._id}`)}
+            />
+          </div>
+          <div className="product-list-item-description-wrapper">
+            <div className="brand-wrapper">{product.brand}</div>
+            <div className="name-wrapper">{product.name}</div>
+            <div className="price-wrapper">{"$" + product.price}</div>
+          </div>
         </div>
-      </div>
-      <div className="product-list-item-wrapper">
-        <div className="product-list-item-image-wrapper">IMG</div>
-        <div className="product-list-item-description-wrapper">
-          <div className="brand-wrapper">Toy Machine</div>
-          <div className="name-wrapper">Cat Monster Complete</div>
-          <div className="price-wrapper">$99</div>
-        </div>
-      </div>
-      <div className="product-list-item-wrapper">
-        <div className="product-list-item-image-wrapper">IMG</div>
-        <div className="product-list-item-description-wrapper">
-          <div className="brand-wrapper">Toy Machine</div>
-          <div className="name-wrapper">Cat Monster Complete</div>
-          <div className="price-wrapper">$99</div>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
