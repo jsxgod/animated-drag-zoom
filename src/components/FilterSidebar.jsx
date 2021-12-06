@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
@@ -6,8 +6,8 @@ const FilterSidebar = ({ closeSidebarHandler }) => {
   const productsState = useSelector((state) => state.products);
   const [brands, setBrands] = useState([]);
   const [productTypes, setProductTypes] = useState([]);
-  const [numberOfSelectedOptions, setNumberOfSelectedOptions] = useState(0);
-  let filterData = { brands: [], productTypes: [] };
+  const [showConfirmButton, setShowConfirmButton] = useState(false);
+  const filterData = useRef({ brands: [], productTypes: [] });
 
   useEffect(() => {
     if (productsState.status === "success") {
@@ -22,34 +22,53 @@ const FilterSidebar = ({ closeSidebarHandler }) => {
     }
   }, [productsState]);
 
+  const determineShowHideConfirmButton = () => {
+    let show = false;
+    for (const [key, value] of Object.entries(filterData.current)) {
+      if (value.length > 0) {
+        show = true;
+        break;
+      }
+    }
+    return show;
+  };
   const handleFilterProductType = (productType) => {
-    if (!filterData.productTypes.includes(productType)) {
-      filterData.productTypes.push(productType);
+    if (!filterData.current.productTypes.includes(productType)) {
+      filterData.current.productTypes.push(productType);
     } else {
-      filterData.productTypes = filterData.productTypes.filter(
+      filterData.current.productTypes = filterData.current.productTypes.filter(
         (x) => x !== productType
       );
     }
+    setShowConfirmButton(determineShowHideConfirmButton());
   };
   const handleFilterBrand = (brand) => {
-    if (!filterData.brands.includes(brand)) {
-      filterData.brands.push(brand);
+    if (!filterData.current.brands.includes(brand)) {
+      filterData.current.brands.push(brand);
+      setShowConfirmButton(true);
     } else {
-      filterData.brands = filterData.brands.filter((x) => x !== brand);
+      filterData.current.brands = filterData.current.brands.filter(
+        (x) => x !== brand
+      );
     }
+    setShowConfirmButton(determineShowHideConfirmButton());
   };
 
   return (
     <div className="filter-sidebar">
-      {numberOfSelectedOptions}
       <div className="filter-sidebar-header-wrapper">
         <h2>Filter products</h2>
         <div className="close-button-wrapper">
-          {numberOfSelectedOptions > 0 ? (
-            <FaCheck onClick={() => alert("handle filter")} />
-          ) : (
-            <FaTimes onClick={() => closeSidebarHandler(true)} />
+          {showConfirmButton && (
+            <FaCheck
+              className="confirm"
+              onClick={() => alert("handle filter")}
+            />
           )}
+          <FaTimes
+            className="close"
+            onClick={() => closeSidebarHandler(false)}
+          />
         </div>
       </div>
       <div className="filter-sidebar-sections-container">
