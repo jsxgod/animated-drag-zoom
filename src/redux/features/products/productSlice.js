@@ -23,6 +23,7 @@ export const productSlice = createSlice({
   extraReducers: {
     [fetchProduct.pending]: (state, action) => {
       state.status = "pending";
+      state.data = {};
     },
     [fetchProduct.fulfilled]: (state, action) => {
       state.status = "success";
@@ -30,6 +31,7 @@ export const productSlice = createSlice({
     },
     [fetchProduct.rejected]: (state, action) => {
       state.status = "rejected";
+      state.data = {};
     },
   },
 });
