@@ -107,7 +107,7 @@ const ProductDrag = ({ productData, x, enlargedBreakpoint }) => {
           className="product-image"
           animate={animationControls}
         >
-          <img src={productData.images?.large} alt="product" />
+          <img src={productData.images?.drag} alt="product" />
         </motion.div>
       </div>
       <motion.div
