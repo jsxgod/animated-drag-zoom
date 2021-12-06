@@ -47,7 +47,9 @@
         z-index: 2;
         position: absolute;
         left: 100px;
+        height: 100%;
         img {
+          height: 95%;
           pointer-events: none;
           scale: 0.9;
         }
@@ -90,4 +92,10 @@
       }
     }
   }
+}
+
+.skeleton-product {
+  width: 100vw;
+  height: 100vh;
+  background-color: $background-color;
 }
