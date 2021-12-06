@@ -8,7 +8,11 @@ const Product = ({ productData }) => {
 
   return (
     <div className="product">
-      <Gallery style={{ translateY: moveUp }} images={productData.images} />
+      <Gallery
+        style={{ translateY: moveUp }}
+        productType={productData.product_type}
+        images={productData.images}
+      />
       <ProductDrag
         productData={productData}
         x={x}
