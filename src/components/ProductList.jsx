@@ -17,7 +17,7 @@ const ProductList = () => {
   return (
     <div className="product-list">
       {products?.map((product) => (
-        <div className="product-list-item-wrapper">
+        <div key={product._id} className="product-list-item-wrapper">
           <div className="product-list-item-image-wrapper">
             <img
               src={product.images.main}

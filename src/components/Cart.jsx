@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -11,7 +11,6 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const ease = [0.6, 0.05, -0.01, 0.99];
   const navigate = useNavigate();
 
   const cartItems = useSelector((state) => state.cart.cartItems);
