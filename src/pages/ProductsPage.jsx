@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { FilterSidebar, ProductList } from "../components";
 import { FaFilter } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { fetchFilterData } from "../redux/features/filter/filterSlice";
 
 const ProductsPage = () => {
   const [filterSidebarOpened, setFilterSideBarOpened] = useState(false);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchFilterData());
+  }, [dispatch]);
 
   return (
     <motion.div
@@ -20,9 +27,11 @@ const ProductsPage = () => {
             onClick={() => setFilterSideBarOpened(!filterSidebarOpened)}
           />
         </div>
-        {filterSidebarOpened && (
-          <FilterSidebar closeSidebarHandler={setFilterSideBarOpened} />
-        )}
+        <AnimatePresence>
+          {filterSidebarOpened && (
+            <FilterSidebar closeSidebarHandler={setFilterSideBarOpened} />
+          )}
+        </AnimatePresence>
       </div>
       <ProductList />
     </motion.div>

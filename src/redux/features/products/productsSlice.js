@@ -8,9 +8,15 @@ const initialState = {
 
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
-  async () => {
-    const response = await axios.get("http://localhost:5000/api/products");
-    return response?.data;
+  async (params = {}) => {
+    try {
+      const response = await axios.get("http://localhost:5000/api/products", {
+        params,
+      });
+      return response?.data;
+    } catch (error) {
+      console.log(error);
+    }
   }
 );
 
