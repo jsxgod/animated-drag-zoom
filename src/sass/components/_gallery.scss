@@ -2,10 +2,9 @@
   .gallery {
     .gallery-wrapper {
       padding: 0 32px;
-      height: 85vh;
+      max-height: 85vh;
       display: grid;
       gap: 3rem 1rem;
-      background-color: #fff;
       &.skateboard {
         grid-template-areas: "back wheel" "back side" "close-up side";
         grid-template-columns: 1fr 1fr;
@@ -20,6 +19,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 40px;
+        img {
+          position: relative;
+          top: -10px;
+          width: 100%;
+          filter: drop-shadow(2px 4px 8px rgba(177, 177, 177, 1));
+          background-size: 30px;
+        }
       }
       .image-wrapper {
         position: relative;
