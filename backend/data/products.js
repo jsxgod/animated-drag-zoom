@@ -116,6 +116,36 @@ const products = [
       },
     ],
   },
+  {
+    product_type: "Wheels",
+    brand: "Darkstar",
+    name: "Darkstar Forty Wheels",
+    description:
+      "100% solid, smooth, and fast! Tear through the streets and start rolling with the Darkstar Forty Wheels. These are a classic street style wheel shape perfect for ripping through the streets or cruising through the skatepark. Not only do these wheels pack a great bang for your buck, they also come standard with a 30 day guarantee against flatspots. Wheels sold in sets of FOUR.",
+    price: 23.95,
+    images: {
+      drag: "https://i.imgur.com/aFJ3av5.png",
+      main: "https://i.imgur.com/aFJ3av5.png",
+    },
+    details: [
+      {
+        label: "Size",
+        value: "52mm",
+      },
+      {
+        label: "Wheel shape",
+        value: "Classic street style",
+      },
+      {
+        label: "Durable",
+        value: "30 day guarantee against flatspots",
+      },
+      {
+        label: "Quantity",
+        value: "Sold in a set of FOUR",
+      },
+    ],
+  },
 ];
 
 module.exports = products;
