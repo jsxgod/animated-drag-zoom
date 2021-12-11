@@ -10,3 +10,4 @@ export { default as Cart } from "./Cart";
 export { default as Menu } from "./Menu";
 export { default as ProductList } from "./ProductList";
 export { default as FilterSidebar } from "./FilterSidebar";
+export { default as LoadingAnimation } from "./LoadingAnimation";
