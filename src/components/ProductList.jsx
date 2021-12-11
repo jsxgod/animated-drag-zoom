@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { fetchProducts } from "../redux/features/products/productsSlice";
 import { AnimatePresence, motion } from "framer-motion";
-
-import { ReactComponent as SkateboardSvg } from "../assets/svg/Skateboard.svg";
+import { LoadingAnimation } from ".";
 
 const ProductList = () => {
   const dispatch = useDispatch();
@@ -29,7 +28,13 @@ const ProductList = () => {
               key={product._id}
               className="product-list-item-wrapper"
             >
-              <div className="product-list-item-image-wrapper">
+              <div
+                className={`product-list-item-image-wrapper ${
+                  ["Wheels", "Trucks"].includes(product.product_type)
+                    ? "horizontal"
+                    : ""
+                }`}
+              >
                 <img
                   src={product.images.main}
                   alt={"main"}
@@ -44,33 +49,7 @@ const ProductList = () => {
             </motion.div>
           ))
         ) : (
-          <div className="loading-animation-wrapper">
-            <motion.div
-              className="svg-wrapper"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{
-                scale: 1.2,
-                opacity: 1,
-                transition: {
-                  duration: 0.4,
-                  repeat: Infinity,
-                  repeatDelay: 0.2,
-                  ease: [0.6, 0.05, -0.01, 0.99],
-                },
-              }}
-              exit={{
-                scale: 1.2,
-                opacity: 1,
-                transition: {
-                  duration: 0.4,
-                  repeatDelay: 0.2,
-                  ease: [0.6, 0.05, -0.01, 0.99],
-                },
-              }}
-            >
-              <SkateboardSvg className="skateboard-svg" />
-            </motion.div>
-          </div>
+          <LoadingAnimation />
         )}
       </AnimatePresence>
     </div>
