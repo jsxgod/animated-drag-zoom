@@ -66,6 +66,12 @@
           width: 20%;
           height: 100%;
           overflow: hidden;
+          &.horizontal {
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
           img {
             height: 100%;
           }

@@ -20,14 +20,47 @@ const Cart = () => {
 
   const handleClearCart = () => {
     dispatch(clearCart());
+    window.localStorage.setItem("cart-items", JSON.stringify([]));
+  };
+
+  const handleLocalCart = (item, actionType) => {
+    let localCartItems =
+      JSON.parse(window.localStorage.getItem("cart-items")) || [];
+    switch (actionType) {
+      case "add":
+        localCartItems.push(item);
+        break;
+      case "remove":
+        const idxs = localCartItems.map((localItem) => localItem._id);
+        const idx = idxs.indexOf(item._id);
+        if (idx >= 0) {
+          localCartItems.splice(idx, 1);
+        }
+        break;
+      case "removeCompletely":
+        localCartItems = localCartItems.filter(
+          (localItem) => localItem._id !== item._id
+        );
+        break;
+      default:
+    }
+
+    window.localStorage.setItem("cart-items", JSON.stringify(localCartItems));
   };
 
   const handleRemoveItemCompletely = (item) => {
     dispatch(removeFromCart(item));
+    handleLocalCart(item, "removeCompletely");
   };
 
   const handleIncreaseAmount = (item) => {
     dispatch(addToCart(item));
+    handleLocalCart(item, "add");
+  };
+
+  const handleDecreaseAmount = (item) => {
+    dispatch(safeRemoveFromCart(item));
+    handleLocalCart(item, "remove");
   };
 
   const handleNavigate = (route) => {
@@ -78,7 +111,11 @@ const Cart = () => {
                 <span></span>
               </button>
               <div
-                className="cart-item-image-wrapper"
+                className={`cart-item-image-wrapper ${
+                  ["Wheels", "Trucks"].includes(item.product_type)
+                    ? "horizontal"
+                    : ""
+                }`}
                 onClick={() => handleNavigate(`/products/${item._id}`)}
               >
                 <img src={item?.images?.main} alt="img" />
@@ -95,7 +132,7 @@ const Cart = () => {
               <div className="cart-item-quantity-controls-wrapper">
                 <button
                   className="control-wrapper minus"
-                  onClick={() => dispatch(safeRemoveFromCart(item))}
+                  onClick={() => handleDecreaseAmount(item)}
                 >
                   -
                 </button>
@@ -121,7 +158,7 @@ const Cart = () => {
         transition={{ duration: 0.1 }}
       >
         <div className="cart-total-price-wrapper">
-          <p>Total Price: {"$" + totalPrice}</p>
+          <p>Total Price: {"$" + Math.abs(totalPrice.toFixed(2))}</p>
         </div>
         <div className="buy-button-wrapper">
           <button className="buy-button">BUY</button>
