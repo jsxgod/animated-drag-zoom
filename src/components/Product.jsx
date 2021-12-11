@@ -13,11 +13,14 @@ const Product = ({ productData }) => {
         productType={productData.product_type}
         images={productData.images}
       />
-      <ProductDrag
-        productData={productData}
-        x={x}
-        enlargedBreakpoint={enlargedBreakpoint}
-      />
+      {(productData.product_type === "Deck" ||
+        productData.product_type === "SkateBoard") && (
+        <ProductDrag
+          productData={productData}
+          x={x}
+          enlargedBreakpoint={enlargedBreakpoint}
+        />
+      )}
     </div>
   );
 };
