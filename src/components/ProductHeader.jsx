@@ -2,7 +2,7 @@ import React from "react";
 import { animateScroll } from "react-scroll";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/features/cart/cartSlice";
-import { ReactComponent as DownArrow } from "../assets/down-arrow.svg";
+import { TiInfoLargeOutline } from "react-icons/ti";
 
 const ProductHeader = ({ productData }) => {
   // REDUX
@@ -10,6 +10,10 @@ const ProductHeader = ({ productData }) => {
 
   const handleAddToCart = () => {
     dispatch(addToCart(productData));
+    const localCartItems =
+      JSON.parse(window.localStorage.getItem("cart-items")) || [];
+    localCartItems.push(productData);
+    window.localStorage.setItem("cart-items", JSON.stringify(localCartItems));
   };
 
   return (
@@ -24,7 +28,7 @@ const ProductHeader = ({ productData }) => {
             <button onClick={handleAddToCart}>
               Buy Now ${productData.price}
             </button>
-            <DownArrow
+            <TiInfoLargeOutline
               onClick={() =>
                 animateScroll.scrollToBottom({
                   smooth: "easeInOutQuad",
