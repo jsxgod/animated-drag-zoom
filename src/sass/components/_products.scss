@@ -40,6 +40,12 @@
       img {
         height: 100%;
       }
+      &.horizontal {
+        img {
+          height: auto;
+          width: 100%;
+        }
+      }
     }
     .product-list-item-description-wrapper {
       display: grid;
