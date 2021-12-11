@@ -2,12 +2,16 @@ import React from "react";
 import { Header } from "./components";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { CartPage, HomePage, ProductPage, ProductsPage } from "./pages";
+import useLoadCart from "./hooks/useLoadCart";
 
 import "./sass/main.scss";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
   const location = useLocation();
+
+  useLoadCart();
+
   return (
     <div className="App">
       <Header />
