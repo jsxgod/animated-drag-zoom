@@ -1,18 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { FaCheck, FaTimes } from "react-icons/fa";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
-import { fetchProducts } from "../redux/features/products/productsSlice";
+import { useNavigate } from "react-router-dom";
 
 const FilterSidebar = ({ closeSidebarHandler }) => {
   const filterState = useSelector((state) => state.filter);
-  const dispatch = useDispatch();
   const filterParams = useRef(new URLSearchParams());
+  const navigate = useNavigate();
 
   const handleFilterProducts = () => {
     try {
-      dispatch(fetchProducts(filterParams.current));
-      console.log(filterParams.current.toString());
+      navigate("/products?" + filterParams.current.toString());
       closeSidebarHandler(false);
     } catch (error) {
       console.log(error);
