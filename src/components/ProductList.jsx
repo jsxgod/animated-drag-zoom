@@ -11,7 +11,7 @@ const ProductList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchProducts(new URL(document.location).searchParams || {}));
   }, [dispatch]);
 
   const handleNavigate = (route) => {
@@ -36,7 +36,7 @@ const ProductList = () => {
                 }`}
               >
                 <img
-                  src={product.images.main}
+                  src={product.images.thumbnail}
                   alt={"main"}
                   onClick={() => handleNavigate(`/products/${product._id}`)}
                 />
