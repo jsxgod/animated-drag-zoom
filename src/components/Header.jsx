@@ -16,6 +16,13 @@ const Header = () => {
   const handleNavigate = (route) => {
     dispatch(closeMenu());
     navigate(route);
+    document.body.classList.remove("no-scroll");
+  };
+
+  const handleToggleMenu = () => {
+    dispatch(toggleMenu());
+
+    document.body.classList.toggle("no-scroll");
   };
 
   return (
@@ -36,7 +43,7 @@ const Header = () => {
               </div>
               <button
                 className="hamburger-menu-button"
-                onClick={() => dispatch(toggleMenu())}
+                onClick={handleToggleMenu}
               >
                 <motion.span
                   animate={menuOpened ? { opacity: 0 } : { opacity: 1 }}
