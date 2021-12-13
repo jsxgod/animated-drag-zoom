@@ -9,6 +9,7 @@ const products = [
     images: {
       drag: "https://i.imgur.com/4jwWKS6.png",
       main: "https://i.imgur.com/KxxCUF7.png",
+      thumbnail: "https://i.imgur.com/KxxCUF7.png",
       closeUp: "https://i.imgur.com/UNqoruT.png",
       side: "https://i.imgur.com/bndKHjZ.png",
       wheel: "https://i.imgur.com/aJBCo33.png",
@@ -54,6 +55,7 @@ const products = [
     images: {
       drag: "https://i.imgur.com/kX0OihV.png",
       main: "https://i.imgur.com/unE2lkS.png",
+      thumbnail: "https://i.imgur.com/unE2lkS.png",
       front: "https://i.imgur.com/beoaNFu.png",
       side: "https://i.imgur.com/fnjbD9F.png",
     },
@@ -90,6 +92,7 @@ const products = [
     images: {
       drag: "https://i.imgur.com/XlW6jTx.png",
       main: "https://i.imgur.com/1rg3Glz.png",
+      thumbnail: "https://i.imgur.com/1rg3Glz.png",
       front: "https://i.imgur.com/qvhl9bR.png",
       side: "https://i.imgur.com/1shgkUQ.png",
     },
@@ -124,8 +127,8 @@ const products = [
       "100% solid, smooth, and fast! Tear through the streets and start rolling with the Darkstar Forty Wheels. These are a classic street style wheel shape perfect for ripping through the streets or cruising through the skatepark. Not only do these wheels pack a great bang for your buck, they also come standard with a 30 day guarantee against flatspots. Wheels sold in sets of FOUR.",
     price: 23.95,
     images: {
-      drag: "https://i.imgur.com/aFJ3av5.png",
       main: "https://i.imgur.com/aFJ3av5.png",
+      thumbnail: "https://i.imgur.com/aFJ3av5.png",
     },
     details: [
       {
@@ -139,6 +142,354 @@ const products = [
       {
         label: "Durable",
         value: "30 day guarantee against flatspots",
+      },
+      {
+        label: "Quantity",
+        value: "Sold in a set of FOUR",
+      },
+    ],
+  },
+  {
+    product_type: "Wheels",
+    brand: "Toy Machine",
+    name: "Toy Machine FOS Arms Wheels",
+    description:
+      "Start rolling and go skate with the Toy Machine FOS Arms Wheels. Guaranteed high-speed and durability, these pro-quality wheels keep you rolling no matter where you go. Manufactured for speed and control with a classic rounded street shape for all-terrain and technical performance. Wheels sold in sets of FOUR.",
+    price: 30,
+    images: {
+      main: "https://i.imgur.com/ZW6EfjG.png",
+      thumbnail: "https://i.imgur.com/mbS2AaV.png",
+    },
+    details: [
+      {
+        label: "Size",
+        value: "52mm",
+      },
+      {
+        label: "Wheel shape",
+        value: "Classic street style",
+      },
+      {
+        label: "Riding surface",
+        value: "Standard",
+      },
+      {
+        label: "Quantity",
+        value: "Sold in a set of FOUR",
+      },
+    ],
+  },
+  {
+    product_type: "Wheels",
+    brand: "Toy Machine",
+    name: "Toy Machine FOS Arms Wheels",
+    description:
+      "Start rolling and go skate with the Toy Machine FOS Arms Wheels. Guaranteed high-speed and durability, these pro-quality wheels keep you rolling no matter where you go. Manufactured for speed and control with a classic rounded street shape for all-terrain and technical performance. Wheels sold in sets of FOUR.",
+    price: 30,
+    images: {
+      main: "https://i.imgur.com/VqTsqg5.png",
+      thumbnail: "https://i.imgur.com/ZnSyY2S.png",
+    },
+    details: [
+      {
+        label: "Size",
+        value: "54mm",
+      },
+      {
+        label: "Wheel shape",
+        value: "Classic street style",
+      },
+      {
+        label: "Riding surface",
+        value: "Standard",
+      },
+      {
+        label: "Quantity",
+        value: "Sold in a set of FOUR",
+      },
+    ],
+  },
+  {
+    product_type: "Wheels",
+    brand: "Toy Machine",
+    name: "Toy Machine Sect Skater Wheels",
+    description:
+      "Start rolling and go skate with the Toy Machine Sect Skater Wheels. Guaranteed high-speed and durability, these pro-quality wheels keep you rolling no matter where you go. Manufactured for speed and control with a classic rounded street shape for all-terrain and technical performance. Wheels sold in sets of FOUR.",
+    price: 30,
+    images: {
+      main: "https://i.imgur.com/rgzdFs3.png",
+      thumbnail: "https://i.imgur.com/HnjJr7A.png",
+    },
+    details: [
+      {
+        label: "Size",
+        value: "52mm",
+      },
+      {
+        label: "Wheel shape",
+        value: "Classic street style",
+      },
+      {
+        label: "Riding surface",
+        value: "Standard",
+      },
+      {
+        label: "Quantity",
+        value: "Sold in a set of FOUR",
+      },
+    ],
+  },
+  {
+    product_type: "Wheels",
+    brand: "Toy Machine",
+    name: "Toy Machine Sect Skater Wheels",
+    description:
+      "Start rolling and go skate with the Toy Machine Sect Skater Wheels. Guaranteed high-speed and durability, these pro-quality wheels keep you rolling no matter where you go. Manufactured for speed and control with a classic rounded street shape for all-terrain and technical performance. Wheels sold in sets of FOUR.",
+    price: 30,
+    images: {
+      main: "https://i.imgur.com/nrM0vXY.png",
+      thumbnail: "https://i.imgur.com/DlTi1V6.png",
+    },
+    details: [
+      {
+        label: "Size",
+        value: "54mm",
+      },
+      {
+        label: "Wheel shape",
+        value: "Classic street style",
+      },
+      {
+        label: "Riding surface",
+        value: "Standard",
+      },
+      {
+        label: "Quantity",
+        value: "Sold in a set of FOUR",
+      },
+    ],
+  },
+  {
+    product_type: "Wheels",
+    brand: "Toy Machine",
+    name: "Toy Machine All Seeing Wheels",
+    description:
+      "Start rolling and go skate with the Toy Machine All Seeing Wheels. Guaranteed high-speed and durability, these pro-quality wheels keep you rolling no matter where you go. Manufactured for speed and control with a classic rounded street shape for all-terrain and technical performance. Wheels sold in sets of FOUR.",
+    price: 30,
+    images: {
+      main: "https://i.imgur.com/coiUjEK.png",
+      thumbnail: "https://i.imgur.com/iHjkg3J.png",
+    },
+    details: [
+      {
+        label: "Size",
+        value: "52mm",
+      },
+      {
+        label: "Wheel shape",
+        value: "Classic street style",
+      },
+      {
+        label: "Riding surface",
+        value: "Standard",
+      },
+      {
+        label: "Quantity",
+        value: "Sold in a set of FOUR",
+      },
+    ],
+  },
+  {
+    product_type: "Wheels",
+    brand: "Toy Machine",
+    name: "Toy Machine All Seeing Wheels",
+    description:
+      "Start rolling and go skate with the Toy Machine All Seeing Wheels. Guaranteed high-speed and durability, these pro-quality wheels keep you rolling no matter where you go. Manufactured for speed and control with a classic rounded street shape for all-terrain and technical performance. Wheels sold in sets of FOUR.",
+    price: 30,
+    images: {
+      main: "https://i.imgur.com/udqpQGE.png",
+      thumbnail: "https://i.imgur.com/K5CsOFx.png",
+    },
+    details: [
+      {
+        label: "Size",
+        value: "53mm",
+      },
+      {
+        label: "Wheel shape",
+        value: "Classic street style",
+      },
+      {
+        label: "Riding surface",
+        value: "Standard",
+      },
+      {
+        label: "Quantity",
+        value: "Sold in a set of FOUR",
+      },
+    ],
+  },
+  {
+    product_type: "Wheels",
+    brand: "Bones",
+    name: "Bones 100's #14 V4 Wide Wheels White",
+    description:
+      "The Bones 100's #14 V4 Wide Wheels White are excellent wheels for the all-around skateboarder looking for an unbeatable value wheel. Bones original formula. Great for skating rails, ledges, bowls, and anything else in your pathway. Skater designed and built for faster longer grinds, more resistant to flatspots with light weight material to keep you rolling. Wheels sold in sets of FOUR.",
+    price: 24.99,
+    images: {
+      main: "https://i.imgur.com/TorEc1f.png",
+      thumbnail: "https://i.imgur.com/VTaIrzg.png",
+    },
+    details: [
+      {
+        label: "Size",
+        value: "52mm",
+      },
+      {
+        label: "Wheel shape",
+        value: "Bones V4",
+      },
+      {
+        label: "Hardness",
+        value: "100A Durometer",
+      },
+      {
+        label: "Formula",
+        value: "Bones Original",
+      },
+      {
+        label: "Protection",
+        value: "UV Protected",
+      },
+      {
+        label: "Riding Style",
+        value: "Versatile, less side drag and high rebound for speed",
+      },
+      {
+        label: "Quantity",
+        value: "Sold in a set of FOUR",
+      },
+    ],
+  },
+  {
+    product_type: "Wheels",
+    brand: "Bones",
+    name: "Bones 100's #14 V4 Wide Wheels Black",
+    description:
+      "The Bones 100's #14 V4 Wide Wheels Black are excellent wheels for the all-around skateboarder looking for an unbeatable value wheel. Bones original formula. Great for skating rails, ledges, bowls, and anything else in your pathway. Skater designed and built for faster longer grinds, more resistant to flatspots with light weight material to keep you rolling. Wheels sold in sets of FOUR.",
+    price: 24.99,
+    images: {
+      main: "https://i.imgur.com/fHleDeQ.png",
+      thumbnail: "https://i.imgur.com/a3MtRpP.png",
+    },
+    details: [
+      {
+        label: "Size",
+        value: "52mm",
+      },
+      {
+        label: "Wheel shape",
+        value: "Bones V4",
+      },
+      {
+        label: "Hardness",
+        value: "100A Durometer",
+      },
+      {
+        label: "Formula",
+        value: "Bones Original",
+      },
+      {
+        label: "Protection",
+        value: "UV Protected",
+      },
+      {
+        label: "Riding Style",
+        value: "Versatile, less side drag and high rebound for speed",
+      },
+      {
+        label: "Quantity",
+        value: "Sold in a set of FOUR",
+      },
+    ],
+  },
+  {
+    product_type: "Wheels",
+    brand: "Bones",
+    name: "Bones 100's #4 V5 Sidecuts Wheels White",
+    description:
+      "The Bones 100's #4 V5 Sidecuts Wheels White are excellent wheels for the all-around skateboarder looking for an unbeatable value wheel. Bones original formula. Great for skating rails, ledges, bowls, and anything else in your pathway. Skater designed and built for faster longer grinds, more resistant to flatspots with light weight material to keep you rolling. Wheels sold in sets of FOUR.",
+    price: 24.99,
+    images: {
+      main: "https://i.imgur.com/MX5Pq9U.png",
+      thumbnail: "https://i.imgur.com/aOaDV1y.png",
+    },
+    details: [
+      {
+        label: "Size",
+        value: "52mm",
+      },
+      {
+        label: "Wheel shape",
+        value: "Bones V5",
+      },
+      {
+        label: "Hardness",
+        value: "100A Durometer",
+      },
+      {
+        label: "Formula",
+        value: "Bones Original",
+      },
+      {
+        label: "Protection",
+        value: "UV Protected",
+      },
+      {
+        label: "Riding Style",
+        value: "Versatile, less side drag and high rebound for speed",
+      },
+      {
+        label: "Quantity",
+        value: "Sold in a set of FOUR",
+      },
+    ],
+  },
+  {
+    product_type: "Wheels",
+    brand: "Bones",
+    name: "Bones 100's #4 V5 Sidecuts Wheels Black",
+    description:
+      "The Bones 100's #4 V5 Sidecuts Wheels Black are excellent wheels for the all-around skateboarder looking for an unbeatable value wheel. Bones original formula. Great for skating rails, ledges, bowls, and anything else in your pathway. Skater designed and built for faster longer grinds, more resistant to flatspots with light weight material to keep you rolling. Wheels sold in sets of FOUR.",
+    price: 24.99,
+    images: {
+      main: "https://i.imgur.com/m1Wm8gr.png",
+      thumbnail: "https://i.imgur.com/SRTH9jO.png",
+    },
+    details: [
+      {
+        label: "Size",
+        value: "52mm",
+      },
+      {
+        label: "Wheel shape",
+        value: "Bones V5",
+      },
+      {
+        label: "Hardness",
+        value: "100A Durometer",
+      },
+      {
+        label: "Formula",
+        value: "Bones Original",
+      },
+      {
+        label: "Protection",
+        value: "UV Protected",
+      },
+      {
+        label: "Riding Style",
+        value: "Versatile, less side drag and high rebound for speed",
       },
       {
         label: "Quantity",
