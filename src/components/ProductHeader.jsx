@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { animateScroll } from "react-scroll";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/features/cart/cartSlice";
 import { TiInfoLargeOutline } from "react-icons/ti";
+import { FaArrowLeft } from "react-icons/fa";
 
 const ProductHeader = ({ productData }) => {
+  const navigate = useNavigate();
   // REDUX
   const dispatch = useDispatch();
 
@@ -20,8 +23,22 @@ const ProductHeader = ({ productData }) => {
     <div className="product-header">
       <div className="product-info-wrapper">
         <div className="product-info-content">
-          <h4>{productData.product_type}</h4>
-          <h1>{productData.brand}</h1>
+          <div className="content-header-wrapper">
+            <h4
+              onClick={() =>
+                navigate(`/products?product_type=${productData.product_type}`)
+              }
+            >
+              {productData.product_type}
+            </h4>
+            <FaArrowLeft
+              className="back-arrow-icon"
+              onClick={() => navigate(-1)}
+            />
+          </div>
+          <h1 onClick={() => navigate(`/products?brand=${productData.brand}`)}>
+            {productData.brand}
+          </h1>
           <h2>{productData.name}</h2>
           <p>{productData.description}</p>
           <div className="buttons-container">
