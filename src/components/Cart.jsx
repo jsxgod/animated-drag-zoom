@@ -9,6 +9,7 @@ import {
   clearCart,
 } from "../redux/features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
+import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -90,66 +91,64 @@ const Cart = () => {
         </button>
       </div>
       <AnimatePresence>
-        <motion.div
-          className="cart-items-container"
-          variants={parentSlideVariants}
-          initial="initial"
-          animate="animate"
-        >
-          {cartItems?.map((item) => (
-            <motion.div
-              key={item._id}
-              className="cart-item-wrapper"
-              variants={slideVariants}
-              layout
-            >
-              <button
-                className="delete-cart-item-button"
-                onClick={() => handleRemoveItemCompletely(item)}
+        <div className="cart-items-wrapper">
+          <motion.div
+            className="cart-items-container"
+            variants={parentSlideVariants}
+            initial="initial"
+            animate="animate"
+          >
+            {cartItems?.map((item) => (
+              <motion.div
+                key={item._id}
+                className="cart-item-wrapper"
+                variants={slideVariants}
+                layout
               >
-                <span></span>
-                <span></span>
-              </button>
-              <div
-                className={`cart-item-image-wrapper ${
-                  ["Wheels", "Trucks"].includes(item.product_type)
-                    ? "horizontal"
-                    : ""
-                }`}
-                onClick={() => handleNavigate(`/products/${item._id}`)}
-              >
-                <img src={item?.images?.main} alt="img" />
-              </div>
-              <div className="cart-item-description-wrapper">
+                <button
+                  className="delete-cart-item-button"
+                  onClick={() => handleRemoveItemCompletely(item)}
+                >
+                  <span></span>
+                  <span></span>
+                </button>
                 <div
-                  className="cart-item-name"
+                  className={`cart-item-image-wrapper ${
+                    ["Wheels", "Trucks"].includes(item.product_type)
+                      ? "horizontal"
+                      : ""
+                  }`}
                   onClick={() => handleNavigate(`/products/${item._id}`)}
                 >
-                  {item?.name}
+                  <img src={item?.images?.thumbnail} alt="img" />
                 </div>
-                <div className="cart-item-brand">{item?.brand}</div>
-              </div>
-              <div className="cart-item-quantity-controls-wrapper">
-                <button
-                  className="control-wrapper minus"
-                  onClick={() => handleDecreaseAmount(item)}
-                >
-                  -
-                </button>
-                <div className="quantity-wrapper">{item.quantity}</div>
-                <button
-                  className="control-wrapper plus"
-                  onClick={() => handleIncreaseAmount(item)}
-                >
-                  +
-                </button>
-              </div>
-              <div className="cart-item-price-wrapper">
-                {"$" + item.quantity * item.price}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+                <div className="cart-item-description-wrapper">
+                  <div
+                    className="cart-item-name"
+                    onClick={() => handleNavigate(`/products/${item._id}`)}
+                  >
+                    {item?.name}
+                  </div>
+                  <div className="cart-item-brand">{item?.brand}</div>
+                </div>
+                <div className="cart-item-quantity-controls-wrapper">
+                  <FaMinusCircle
+                    className="minus-icon"
+                    onClick={() => handleDecreaseAmount(item)}
+                  />
+                  <div className="quantity-wrapper">{item.quantity}</div>
+                  <FaPlusCircle
+                    className="plus-icon"
+                    onClick={() => handleIncreaseAmount(item)}
+                  />
+                </div>
+                <div className="cart-item-price-wrapper">
+                  {"$" + item.quantity * item.price}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </AnimatePresence>
       <motion.div
         className="cart-info-wrapper"
