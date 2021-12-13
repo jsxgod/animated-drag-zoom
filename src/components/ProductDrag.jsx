@@ -9,9 +9,9 @@ import {
 import { scroller as scroll } from "react-scroll";
 import { ReactComponent as Chevron } from "../assets/chevron.svg";
 import { ProductDragHeader } from ".";
+import { ease } from "../utils";
 
 const ProductDrag = ({ productData, x, enlargedBreakpoint }) => {
-  const ease = [0.6, 0.05, -0.01, 0.99];
   const leftDragConstraint = -1700;
   const width = useTransform(x, [leftDragConstraint, 0], ["100%", "0%"]);
   const scale = useTransform(x, [enlargedBreakpoint, -100], [1.25, 1]);
