@@ -11,3 +11,4 @@ export { default as Menu } from "./Menu";
 export { default as ProductList } from "./ProductList";
 export { default as FilterSidebar } from "./FilterSidebar";
 export { default as LoadingAnimation } from "./LoadingAnimation";
+export { default as ProductsMenu } from "./ProductsMenu";
