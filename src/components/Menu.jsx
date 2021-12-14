@@ -2,22 +2,28 @@ import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { closeMenu } from "../redux/features/menu/menuSlice";
+import { closeMenu, openProductsMenu } from "../redux/features/menu/menuSlice";
+import { ProductsMenu } from ".";
+import { ease } from "../utils";
 
 const Menu = () => {
-  const ease = [0.6, 0.05, -0.01, 0.99];
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const opened = useSelector((state) => state.menu.opened);
+  const menuState = useSelector((state) => state.menu);
 
   const handleNavigate = (route) => {
     dispatch(closeMenu());
     navigate(route);
+    document.body.classList.remove("no-scroll");
+  };
+
+  const handleOpenProductsMenu = () => {
+    dispatch(openProductsMenu());
   };
 
   return (
     <AnimatePresence>
-      {opened && (
+      {menuState?.opened && (
         <motion.div
           initial={{ x: "-100vw" }}
           animate={{ x: 0, transition: { ease: ease, duration: 0.6 } }}
@@ -33,7 +39,7 @@ const Menu = () => {
             </motion.button>
             <motion.button
               className="menu-link-button"
-              onClick={() => handleNavigate("/products")}
+              onClick={handleOpenProductsMenu}
             >
               Products
             </motion.button>
@@ -44,6 +50,9 @@ const Menu = () => {
               About us
             </motion.button>
           </div>
+          <AnimatePresence>
+            {menuState.productsMenuOpened && <ProductsMenu />}
+          </AnimatePresence>
         </motion.div>
       )}
     </AnimatePresence>
