@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { fetchProducts } from "../redux/features/products/productsSlice";
 import { AnimatePresence, motion } from "framer-motion";
 import { LoadingAnimation } from ".";
@@ -9,10 +9,11 @@ const ProductList = () => {
   const dispatch = useDispatch();
   const productsState = useSelector((state) => state.products);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     dispatch(fetchProducts(new URL(document.location).searchParams || {}));
-  }, [dispatch]);
+  }, [dispatch, location]);
 
   const handleNavigate = (route) => {
     navigate(route);
