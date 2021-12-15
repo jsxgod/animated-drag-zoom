@@ -3,36 +3,44 @@ const mongoose = require("mongoose");
 const ProductSchema = new mongoose.Schema({
   product_type: {
     type: String,
-    enum: ['SkateBoard', 'Deck', 'Wheels', 'Trucks'],
+    enum: ["SkateBoard", "Deck", "Wheels", "Truck", "Hardware"],
     required: true,
   },
   brand: {
     type: String,
-    required: true
+    required: true,
   },
   name: {
     type: String,
-    required: true
+    required: true,
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   price: {
     type: Number,
     min: 0,
-    required: true
+    required: true,
   },
   images: {
     type: Object,
-    required: true
+    required: true,
   },
   details: {
     type: [],
-    required: true
-  }
+    required: false,
+  },
+  available_sizes: {
+    type: [],
+    required: false,
+  },
+  truck_sizing: {
+    type: Object,
+    required: false,
+  },
 });
 
-const Product = mongoose.model('Product', ProductSchema);
+const Product = mongoose.model("Product", ProductSchema);
 
 module.exports = Product;
