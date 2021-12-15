@@ -9,7 +9,7 @@ const ProductPage = () => {
   const { id } = useParams();
   // REDUX
   const dispatch = useDispatch();
-  const productData = useSelector((state) => state.product.data);
+  const productState = useSelector((state) => state.product);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -29,9 +29,15 @@ const ProductPage = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
         >
-          <ProductHeader productData={productData} />
-          <Product productData={productData} />
-          <Details productData={productData} />
+          {productState.status === "success" && (
+            <>
+              <ProductHeader productData={productState.data} />
+              <Product productData={productState.data} />
+              {productState.data.hasOwnProperty("details") && (
+                <Details productData={productState.data} />
+              )}
+            </>
+          )}
         </motion.div>
       )}
     </motion.div>
