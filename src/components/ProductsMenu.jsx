@@ -44,7 +44,8 @@ const ProductsMenu = () => {
     { label: "Skate Boards", route: "/products?product_type=SkateBoard" },
     { label: "Decks", route: "/products?product_type=Deck" },
     { label: "Wheels", route: "/products?product_type=Wheels" },
-    { label: "Trucks", route: "/products?product_type=Trucks" },
+    { label: "Trucks", route: "/products?product_type=Truck" },
+    { label: "Hardware", route: "/products?product_type=Hardware" },
   ];
 
   const handleClose = () => {
@@ -76,6 +77,7 @@ const ProductsMenu = () => {
       >
         {menuOptions.map((option) => (
           <motion.h2
+            key={option.label}
             onClick={() => handleNavigate(option.route)}
             variants={childrenVariants}
             className="product-option"
