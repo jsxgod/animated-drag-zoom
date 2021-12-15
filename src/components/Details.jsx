@@ -15,6 +15,23 @@ const Details = ({ productData }) => {
             </li>
           ))}
         </ul>
+        {productData.product_type === "Truck" && (
+          <>
+            <div className="details-header">
+              <h5>Sizing guide</h5>
+            </div>
+            <ul className="details-container">
+              {Object.entries(productData?.truck_sizing)?.map(
+                ([key, value], i) => (
+                  <li key={productData._id + "sizing-" + i}>
+                    <div className="details-label">{key}</div>
+                    <div className="details-content">{value}</div>
+                  </li>
+                )
+              )}
+            </ul>
+          </>
+        )}
       </div>
     </div>
   );
