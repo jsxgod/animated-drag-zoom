@@ -497,6 +497,116 @@ const products = [
       },
     ],
   },
+  {
+    product_type: "Truck",
+    brand: "Toy Machine",
+    name: "Independent x Toy Machine Stage 11 Standard Truck",
+    description:
+      'Two iconic brands come together to collaborate and get you right with the Independent x Toy Machine Stage 11 Standard Truck. You get superior turn and stability, better grind clearance, and improved "no hang-up yoke". Only the best materials used and assembled locally, here in the U.S. Independent/Toy Machine detailing throughout.',
+    price: 28,
+    images: {
+      main: "https://i.imgur.com/oXvBnpN.png",
+      thumbnail: "https://i.imgur.com/4nsRl5z.png",
+    },
+    available_sizes: ['8"', '8.25"', '8.5"', '8.75"'],
+    details: [
+      { label: "Material", value: "356 T6 aluminum" },
+      { label: "Axles", value: "4140 chromoly steel" },
+      { label: "Kingpins", value: "Grade 8" },
+      { label: "Cut", value: 'Four-hole for sizes 7.75" - 8.5"' },
+      { label: "Cut", value: 'Six-hole for sizes 8.75" - 10"' },
+    ],
+    truck_sizing: {
+      139: '8.00"',
+      144: '8.25"',
+      149: '8.50"',
+      159: '8.75"',
+      169: '9.00"',
+    },
+  },
+  {
+    product_type: "Truck",
+    brand: "Independent",
+    name: "Independent Stage 11 Mason Silva Standard Truck",
+    description:
+      'The Independent Stage 11 Mason Silva Standard Truck feature new updated geometry. This is the new Standard. You get superior turn and stability, better grind clearance, improved "no hang-up yoke", and a lightweight hollow body hanger. Only the best materials used and assembled locally, here in the U.S. Independent detailing throughout.',
+    price: 27.99,
+    images: {
+      main: "https://i.imgur.com/ZYUaEHO.png",
+      thumbnail: "https://i.imgur.com/Vvc9CtR.png",
+    },
+    available_sizes: ['8"', '8.25"', '8.5"', '8.75"'],
+    details: [
+      { label: "Material", value: "356 T6 aluminum" },
+      { label: "Axles", value: "4140 chromoly steel" },
+      { label: "Kingpins", value: "Grade 8" },
+      { label: "Cut", value: 'Four-hole for sizes 7.75" - 8.5"' },
+      { label: "Cut", value: 'Six-hole for sizes 8.75" - 10"' },
+      { label: "Pro Model", value: "Mason Silva" },
+    ],
+    truck_sizing: {
+      139: '8.00"',
+      144: '8.25"',
+      149: '8.50"',
+      159: '8.75"',
+      169: '9.00"',
+    },
+  },
+  {
+    product_type: "Truck",
+    brand: "Ruckus",
+    name: "Ruckus Mid Trucks",
+    description:
+      "Start charging through the grinds with the Ruckus Mid Trucks. New light weight design with improved turning geometry and quick and stable turning radius. High rebound and responsive 92a bushings with non-slip axels, hardened kingpin and axel. Bushing color may vary.",
+    price: 18,
+    images: {
+      main: "https://i.imgur.com/Cgj3Rm8.png",
+      thumbnail: "https://i.imgur.com/CUFGvF3.png",
+    },
+    available_sizes: ['7.75"', '8"', '8.25"'],
+    details: [
+      { label: "Bushings", value: "Responsive 92a" },
+      { label: "Axels", value: "Hardened Non-slip" },
+      { label: "Kingpins", value: "Hardened" },
+    ],
+    truck_sizing: {
+      '5" hanger': '7.5" - 7.75"',
+      '5.25" hanger': '7.875" - 8.125"',
+      '5.5" hanger': '8" - 8.25"',
+    },
+  },
+  {
+    product_type: "Hardware",
+    brand: "Diamond",
+    name: "Diamond Shane O'Neill Pro Allen Hardware",
+    description:
+      "Keep your board lookin and feeling hella tight with the Diamond Shane O'Neill Pro Allen Hardware. Time to get your shine on and roll in style. Manufactured with a custom Diamond wrench to change your bolts to your liking. Comes with eight (8) regular black bolts and one (1) yellow bolt with nine (9) nuts total. Allen key included.",
+    price: 5,
+    images: {
+      main: "https://i.imgur.com/FBajkfz.png",
+      thumbnail: "https://i.imgur.com/rG5VzrL.png",
+    },
+    available_sizes: ['7/8"'],
+    details: [
+      { label: "Contents", value: "Allen key and Diamond wrench included" },
+      { label: "Bolts", value: "Nine bolts included - one yellow" },
+      { label: "Nuts", value: "Nine nuts included - one yellow, eight white" },
+      { label: "Pro Model", value: "Shane O'Neill" },
+    ],
+  },
+  /*
+  {
+    product_type: "Hardware",
+    brand: "",
+    name: "",
+    description: "",
+    price: 0,
+    images: {
+      main: "",
+      thumbnail: "",
+    },
+    available_sizes: [],
+  },*/
 ];
 
 module.exports = products;
