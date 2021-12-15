@@ -31,7 +31,7 @@ const ProductList = () => {
             >
               <div
                 className={`product-list-item-image-wrapper ${
-                  ["Wheels", "Trucks"].includes(product.product_type)
+                  ["Wheels", "Truck", "Hardware"].includes(product.product_type)
                     ? "horizontal"
                     : ""
                 }`}
