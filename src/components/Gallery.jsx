@@ -33,8 +33,14 @@ const Gallery = ({ style, productType, images }) => {
                 <img src={images.side} alt={"side"} />
               </div>
             </motion.div>
-          ) : (
+          ) : ["wheels", "hardware"].includes(productType.toLowerCase()) ? (
             <motion.div style={style} className="gallery-wrapper single">
+              <div className="image-wrapper main">
+                <img src={images.main} alt={"main"} />
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div style={style} className="gallery-wrapper single truck">
               <div className="image-wrapper main">
                 <img src={images.main} alt={"main"} />
               </div>
