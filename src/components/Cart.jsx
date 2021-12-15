@@ -114,7 +114,7 @@ const Cart = () => {
                 </button>
                 <div
                   className={`cart-item-image-wrapper ${
-                    ["Wheels", "Trucks"].includes(item.product_type)
+                    ["Wheels", "Truck", "Hardware"].includes(item.product_type)
                       ? "horizontal"
                       : ""
                   }`}
