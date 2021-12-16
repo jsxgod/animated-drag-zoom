@@ -120,14 +120,25 @@ const Cart = () => {
                   }`}
                   onClick={() => handleNavigate(`/products/${item._id}`)}
                 >
-                  <img src={item?.images?.thumbnail} alt="img" />
+                  <img
+                    src={
+                      item?.selected_size.hasOwnProperty("value")
+                        ? item.selected_size.thumbnail
+                        : item?.images?.thumbnail
+                    }
+                    alt="img"
+                  />
                 </div>
                 <div className="cart-item-description-wrapper">
                   <div
                     className="cart-item-name"
                     onClick={() => handleNavigate(`/products/${item._id}`)}
                   >
-                    {item?.name}
+                    {item?.name +
+                      " " +
+                      (item?.selected_size.hasOwnProperty("value")
+                        ? item.selected_size.value
+                        : "")}
                   </div>
                   <div className="cart-item-brand">{item?.brand}</div>
                 </div>
