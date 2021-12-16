@@ -1,25 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { animateScroll } from "react-scroll";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/features/cart/cartSlice";
 import { TiInfoLargeOutline } from "react-icons/ti";
 import { FaArrowLeft } from "react-icons/fa";
+import { selectSize } from "../redux/features/products/productSlice";
 
-const ProductHeader = ({ productData }) => {
-  const [selectedSizeOption, setSelectedSizeOption] = useState(() => {
-    const hasSizeOptions = productData.hasOwnProperty("available_sizes");
-    return hasSizeOptions ? productData.available_sizes[0] : "";
-  });
+const ProductHeader = () => {
   const navigate = useNavigate();
   // REDUX
   const dispatch = useDispatch();
+  const productData = useSelector((state) => state.product.data);
+  const selectedSize = useSelector((state) => state.product.selectedSize);
 
   const handleAddToCart = () => {
-    dispatch(addToCart(productData));
+    dispatch(addToCart({ ...productData, selected_size: selectedSize }));
     const localCartItems =
       JSON.parse(window.localStorage.getItem("cart-items")) || [];
-    localCartItems.push(productData);
+    localCartItems.push({ ...productData, selected_size: selectedSize });
     window.localStorage.setItem("cart-items", JSON.stringify(localCartItems));
   };
 
@@ -29,7 +28,10 @@ const ProductHeader = ({ productData }) => {
   };
 
   const handleSelectSizeOption = (event) => {
-    setSelectedSizeOption(event.target.value);
+    const newSize = productData.available_sizes.find(
+      (size) => size.value === event.target.value
+    );
+    dispatch(selectSize(newSize));
   };
 
   return (
@@ -75,11 +77,11 @@ const ProductHeader = ({ productData }) => {
                       <label>
                         <input
                           type="radio"
-                          value={size}
-                          checked={selectedSizeOption === size}
+                          value={size.value}
+                          checked={selectedSize.value === size.value}
                           onChange={handleSelectSizeOption}
                         />
-                        {size}
+                        {size.value}
                       </label>
                     </div>
                   ))}
