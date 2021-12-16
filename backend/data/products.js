@@ -508,7 +508,28 @@ const products = [
       main: "https://i.imgur.com/oXvBnpN.png",
       thumbnail: "https://i.imgur.com/4nsRl5z.png",
     },
-    available_sizes: ['8"', '8.25"', '8.5"', '8.75"'],
+    available_sizes: [
+      {
+        value: '8"',
+        main_image: "https://i.imgur.com/oXvBnpN.png",
+        thumbnail: "https://i.imgur.com/4nsRl5z.png",
+      },
+      {
+        value: '8.25"',
+        main_image: "https://i.imgur.com/oXvBnpN.png",
+        thumbnail: "https://i.imgur.com/4nsRl5z.png",
+      },
+      {
+        value: '8.5"',
+        main_image: "https://i.imgur.com/oXvBnpN.png",
+        thumbnail: "https://i.imgur.com/4nsRl5z.png",
+      },
+      {
+        value: '8.75"',
+        main_image: "https://i.imgur.com/oXvBnpN.png",
+        thumbnail: "https://i.imgur.com/4nsRl5z.png",
+      },
+    ],
     details: [
       { label: "Material", value: "356 T6 aluminum" },
       { label: "Axles", value: "4140 chromoly steel" },
@@ -535,7 +556,28 @@ const products = [
       main: "https://i.imgur.com/ZYUaEHO.png",
       thumbnail: "https://i.imgur.com/Vvc9CtR.png",
     },
-    available_sizes: ['8"', '8.25"', '8.5"', '8.75"'],
+    available_sizes: [
+      {
+        value: '8"',
+        main_image: "https://i.imgur.com/ZYUaEHO.png",
+        thumbnail: "https://i.imgur.com/Vvc9CtR.png",
+      },
+      {
+        value: '8.25"',
+        main_image: "https://i.imgur.com/ZYUaEHO.png",
+        thumbnail: "https://i.imgur.com/Vvc9CtR.png",
+      },
+      {
+        value: '8.5"',
+        main_image: "https://i.imgur.com/ZYUaEHO.png",
+        thumbnail: "https://i.imgur.com/Vvc9CtR.png",
+      },
+      {
+        value: '8.75"',
+        main_image: "https://i.imgur.com/ZYUaEHO.png",
+        thumbnail: "https://i.imgur.com/Vvc9CtR.png",
+      },
+    ],
     details: [
       { label: "Material", value: "356 T6 aluminum" },
       { label: "Axles", value: "4140 chromoly steel" },
@@ -563,7 +605,23 @@ const products = [
       main: "https://i.imgur.com/Cgj3Rm8.png",
       thumbnail: "https://i.imgur.com/CUFGvF3.png",
     },
-    available_sizes: ['7.75"', '8"', '8.25"'],
+    available_sizes: [
+      {
+        value: '7.75"',
+        main_image: "https://i.imgur.com/Cgj3Rm8.png",
+        thumbnail: "https://i.imgur.com/CUFGvF3.png",
+      },
+      {
+        value: '8"',
+        main_image: "https://i.imgur.com/Cgj3Rm8.png",
+        thumbnail: "https://i.imgur.com/CUFGvF3.png",
+      },
+      {
+        value: '8.25"',
+        main_image: "https://i.imgur.com/Cgj3Rm8.png",
+        thumbnail: "https://i.imgur.com/CUFGvF3.png",
+      },
+    ],
     details: [
       { label: "Bushings", value: "Responsive 92a" },
       { label: "Axels", value: "Hardened Non-slip" },
@@ -578,6 +636,40 @@ const products = [
   {
     product_type: "Hardware",
     brand: "Diamond",
+    name: "Diamond Hella Tight Phillips Hardware",
+    description:
+      "Keep your board lookin and feeling hella tight with the Diamond Hella Tight Phillips Hardware. Includes a custom Diamond wrench to change your bolts whenever and wherever. Comes with 8 regular black bolts and 1 gold bolt for a total of 9 bolts with 9 silver nuts. Allen key included.",
+    price: 3.99,
+    images: {
+      main: "https://i.imgur.com/cwzxkvP.png",
+      thumbnail: "https://i.imgur.com/uaSmHpP.png",
+    },
+    available_sizes: [
+      {
+        value: '7/8"',
+        main_image: "https://i.imgur.com/cwzxkvP.png",
+        thumbnail: "https://i.imgur.com/uaSmHpP.png",
+      },
+      {
+        value: '1"',
+        main_image: "https://i.imgur.com/TVXqyGh.png",
+        thumbnail: "https://i.imgur.com/Xn8spAy.png",
+      },
+      {
+        value: '1.25"',
+        main_image: "https://i.imgur.com/bsq5myq.png",
+        thumbnail: "https://i.imgur.com/n6aKslh.png",
+      },
+    ],
+    details: [
+      { label: "Contents", value: "Allen key and Diamond wrench included" },
+      { label: "Bolts", value: "Nine bolts included - one gold, eight black" },
+      { label: "Nuts", value: "Nine silver nuts included" },
+    ],
+  },
+  {
+    product_type: "Hardware",
+    brand: "Diamond",
     name: "Diamond Shane O'Neill Pro Allen Hardware",
     description:
       "Keep your board lookin and feeling hella tight with the Diamond Shane O'Neill Pro Allen Hardware. Time to get your shine on and roll in style. Manufactured with a custom Diamond wrench to change your bolts to your liking. Comes with eight (8) regular black bolts and one (1) yellow bolt with nine (9) nuts total. Allen key included.",
@@ -586,7 +678,13 @@ const products = [
       main: "https://i.imgur.com/FBajkfz.png",
       thumbnail: "https://i.imgur.com/rG5VzrL.png",
     },
-    available_sizes: ['7/8"'],
+    available_sizes: [
+      {
+        value: '7/8"',
+        main_image: "https://i.imgur.com/FBajkfz.png",
+        thumbnail: "https://i.imgur.com/rG5VzrL.png",
+      },
+    ],
     details: [
       { label: "Contents", value: "Allen key and Diamond wrench included" },
       { label: "Bolts", value: "Nine bolts included - one yellow" },
