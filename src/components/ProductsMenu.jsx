@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaArrowLeft } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { closeMenu, closeProductsMenu } from "../redux/features/menu/menuSlice";
@@ -18,7 +18,6 @@ const parentVariants = {
     x: 0,
     transition: {
       duration: 0.5,
-      staggerChildren: 0.1,
       delayChildren: 0.1,
       ease: ease,
     },
@@ -35,8 +34,6 @@ const childrenVariants = {
 };
 
 const ProductsMenu = () => {
-  let x = useMotionValue(0, { ease: ease });
-  const fadeOut = useTransform(x, [-50, 0], [0, 1]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const menuOptions = [
@@ -65,16 +62,12 @@ const ProductsMenu = () => {
       animate="show"
       exit="hide"
       className="products-menu"
-      style={{ opacity: fadeOut, x }}
     >
       <div className="products-menu-header-wrapper">
         <h1>Products</h1>
         <FaArrowLeft className="back-arrow-icon" onClick={handleClose} />
       </div>
-      <motion.div
-        style={{ opacity: fadeOut }}
-        className="product-options-container"
-      >
+      <motion.div className="product-options-container">
         {menuOptions.map((option) => (
           <motion.h2
             key={option.label}
