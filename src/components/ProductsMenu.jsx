@@ -37,7 +37,7 @@ const ProductsMenu = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const menuOptions = [
-    { label: "Browse all", route: "/products" },
+    { label: "All", route: "/products" },
     { label: "Skate Boards", route: "/products?product_type=SkateBoard" },
     { label: "Decks", route: "/products?product_type=Deck" },
     { label: "Wheels", route: "/products?product_type=Wheels" },
