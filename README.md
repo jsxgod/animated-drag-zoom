@@ -1,72 +1,82 @@
-Framer motion practice for a future web shop
 
-# Getting Started with Create React App
+# Skate shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A proof of concept mobile only web page brought to life with React.</br>
+Built upon a singular idea - fun deck exploring while making a purchase.
+####
+The goal for the page was to have an unique skateboard deck viewing user interface. Clients can drag to enlarge the decks to break the established visual boundaries of the page. Grew into a full-stack ecommerce project.
 
-## Available Scripts
+## Website
+Visit the live site on your mobile device or use the dev tools to target a mobile view in a browser of your choice.
+The project is available [here 🌐](http://skateshop-ksdev.vercel.app/).
 
-In the project directory, you can run:
+![skateshop](https://user-images.githubusercontent.com/22659815/172367561-c9e5fa91-d8a6-4059-9f15-e42ef9c9d00e.png)
 
-### `npm start`
+## Technologies
+#### Design
+- Figma
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### front-end
+- React
+- Redux-toolkit
+- Sass
+- framer-motion
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### back-end
+- Node.js
+- MongoDB
 
-### `npm test`
+## Environment Variables
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run this project, you will need to add the following environment variables to your .env file
 
-### `npm run build`
+`MONGO_URI` set to the connection string of your MongoDB
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Run Locally
+⚠️ DANGER ZONE ⚠️
+####
+The project modifies local storage.</br>
+If you have anything important saved under the default localhost:3000 make sure to back it up before running the application.</br>
+##
+Clone the project files or download them manually
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+  git clone https://github.com/jsxgod/skate-shop.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Go to the project's frontend directory
 
-### `npm run eject`
+```bash
+  cd skate-shop
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Install dependencies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+  npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Go to the project's backend directory (skate-shop/backend)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+  cd backend
+```
 
-## Learn More
+Install dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Seed the data into the database (skate-shop/backend directory)
 
-### Code Splitting
+```bash
+  npm run data:import
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Start the application (skate-shop/backend directory)
 
-### Analyzing the Bundle Size
+```bash
+  npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
