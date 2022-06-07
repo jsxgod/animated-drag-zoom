@@ -1,6 +1,6 @@
 
 # Skate shop
-.
+
 A mobile only ecommerce shop brought to life with React.</br>
 Built upon a singular idea - fun deck exploring while making a purchase.
 ####
