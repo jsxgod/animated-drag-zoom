@@ -1,10 +1,10 @@
 
 # Skate shop
 
-A proof of concept mobile only web page brought to life with React.</br>
+A mobile only ecommerce shop brought to life with React.</br>
 Built upon a singular idea - fun deck exploring while making a purchase.
 ####
-The goal for the page was to have an unique skateboard deck viewing user interface. Clients can drag to enlarge the decks to break the established visual boundaries of the page. Grew into a full-stack ecommerce project.
+The goal for the shop was to have an unique skateboard deck viewing user experience. Clients can drag to enlarge the decks to break the established visual boundaries of the page. Grew into a full-stack ecommerce project.
 
 ## Website
 Visit the live site on your mobile device or use the dev tools to target a mobile view in a browser of your choice.
